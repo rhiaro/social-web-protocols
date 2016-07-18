@@ -105,117 +105,6 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       font-weight: bold;
     }
   </style>
-  <style>
-    /* --- ISSUES/NOTES --- */
-    
-    div.issue-title,
-    div.note-title,
-    div.ednote-title,
-    div.warning-title {
-      padding-right: 1em;
-      min-width: 7.5em;
-      color: #b9ab2d;
-    }
-    
-    div.issue-title {
-      color: #e05252;
-    }
-    
-    div.note-title,
-    div.ednote-title {
-      color: #2b2;
-    }
-    
-    div.warning-title {
-      color: #f22;
-    }
-    
-    div.issue-title span,
-    div.note-title span,
-    div.ednote-title span,
-    div.warning-title span {
-      text-transform: uppercase;
-    }
-    
-    div.note,
-    div.issue,
-    div.ednote,
-    div.warning {
-      margin-top: 1em;
-      margin-bottom: 1em;
-    }
-    
-    .note> p:first-child,
-    .ednote> p:first-child,
-    .issue> p:first-child,
-    .warning> p:first-child {
-      margin-top: 0
-    }
-    
-    .issue,
-    .note,
-    .ednote,
-    .warning {
-      padding: .5em;
-      border-left-width: .5em;
-      border-left-style: solid;
-    }
-    
-    div.issue,
-    div.note,
-    div.ednote,
-    div.warning {
-      padding: 1em 1.2em 0.5em;
-      margin: 1em 0;
-      position: relative;
-      clear: both;
-    }
-    
-    span.note,
-    span.ednote,
-    span.issue,
-    span.warning {
-      padding: .1em .5em .15em;
-    }
-    
-    .issue {
-      border-color: #e05252;
-      background: #fbe9e9;
-    }
-    
-    .note,
-    .ednote {
-      border-color: #52e052;
-      background: #e9fbe9;
-    }
-    
-    .warning {
-      border-color: #f11;
-      border-width: .2em;
-      border-style: solid;
-      background: #fbe9e9;
-    }
-    
-    .warning-title:before {
-      content: "⚠";
-      /*U+26A0 WARNING SIGN*/
-      font-size: 3em;
-      float: left;
-      height: 100%;
-      padding-right: .3em;
-      vertical-align: top;
-      margin-top: -0.5em;
-    }
-    
-    li.task-list-item {
-      list-style: none;
-    }
-    
-    input.task-list-item-checkbox {
-      margin: 0 0.35em 0.25em -1.6em;
-      vertical-align: middle;
-    }
-  </style>
   <style id="respec-mainstyle">
     /*****************************************************************
  * ReSpec 3 CSS
@@ -721,28 +610,6 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           <li class="tocline"><a class="tocxref" href="#contents"><span class="secno">1.1 </span>Contents</a></li>
           <li class="tocline"><a class="tocxref" href="#swwg-drafts"><span class="secno">1.2 </span>Social Web Working Group Drafts</a></li>
           <li class="tocline"><a class="tocxref" href="#other-specs"><span class="secno">1.3 </span>Other specifications</a></li>
-          <li class="tocline"><a class="tocxref" href="#requirements"><span class="secno">1.4 </span>Requirements</a></li>
-        </ul>
-      </li>
-      <li class="tocline"><a class="tocxref" href="#reading"><span class="secno">2. </span>Reading</a>
-        <ul class="toc">
-          <li class="tocline"><a class="tocxref" href="#content-representation"><span class="secno">2.1 </span>Content representation</a></li>
-          <li class="tocline"><a class="tocxref" href="#objects"><span class="secno">2.2 </span>Objects</a></li>
-          <li class="tocline"><a class="tocxref" href="#streams"><span class="secno">2.3 </span>Streams</a></li>
-        </ul>
-      </li>
-      <li class="tocline"><a class="tocxref" href="#creating-content"><span class="secno">3. </span>Creating content</a>
-        <ul class="toc">
-          <li class="tocline"><a class="tocxref" href="#updating"><span class="secno">3.1 </span>Updating</a></li>
-          <li class="tocline"><a class="tocxref" href="#deleting"><span class="secno">3.2 </span>Deleting</a></li>
-        </ul>
-      </li>
-      <li class="tocline"><a class="tocxref" href="#subscribing"><span class="secno">4. </span>Subscribing</a></li>
-      <li class="tocline"><a class="tocxref" href="#delivery"><span class="secno">5. </span>Delivery</a></li>
-      <li class="tocline"><a class="tocxref" href="#profiles"><span class="secno">6. </span>Profiles</a>
-        <ul class="toc">
-          <li class="tocline"><a class="tocxref" href="#relationships"><span class="secno">6.1 </span>Relationships</a></li>
-          <li class="tocline"><a class="tocxref" href="#authorization-and-access-control"><span class="secno">6.2 </span>Authorization and access control</a></li>
         </ul>
       </li>
       <li class="tocline"><a class="tocxref" href="#references"><span class="secno">A. </span>References</a>
@@ -845,197 +712,186 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
     </section>
 
-    <section property="bibo:hasPart" resource="#requirements" typeof="bibo:Chapter" id="requirements">
-      <h3 resource="#h-requirements" id="h-requirements"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.4 </span>Requirements</span></h3>
+    <!---<section id="requirements">
+      <h3>Requirements</h3>
       <p>This table shows the high level requirements according to the <a href="https://www.w3.org/2013/socialweb/social-wg-charter.html">Social Web Working Group charter</a> and the <a href="https://www.w3.org/wiki/Socialwg/Social_API/Requirements">Social API Requirements</a>, and how the specifications of the Working Group overlap with respect to each.</p>
       <table class="th90">
-        <tbody>
-          <tr>
-            <th></th>
-            <th><a href="#content-representation">Vocabulary</a></th>
-            <th><a href="#content-representation">Syntax</a></th>
-            <th><a href="#reading">Read</a></th>
-            <th><a href="#creating-content">Create</a></th>
-            <th><a href="#updating">Update</a></th>
-            <th><a href="#deleting">Delete</a></th>
-            <th><a href="#subscribing">Subscription</a></th>
-            <th><a href="#delivery">Delivery</a></th>
-            <th><a href="#profiles">Profiles</a></th>
-          </tr>
-          <tr>
-            <td style="text-align:left;">ActivityPub</td>
-            <td></td>
-            <td></td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-          </tr>
-          <tr>
-            <td style="text-align:left;">ActivityStreams 2.0</td>
-            <td>X</td>
-            <td>X</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td style="text-align:left;">jf2</td>
-            <td>X</td>
-            <td>X</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td style="text-align:left;">Linked Data Notifications</td>
-            <td></td>
-            <td></td>
-            <td>X</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>X</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td style="text-align:left;">Micropub</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td style="text-align:left;">Post-type discovery<br></td>
-            <td></td>
-            <td></td>
-            <td>X</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td style="text-align:left;">Webmention</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>X</td>
-            <td></td>
-          </tr>
-        </tbody>
+        <tr>
+          <th></th>
+          <th><a href="#content-representation">Vocabulary</a></th>
+          <th><a href="#content-representation">Syntax</a></th>
+          <th><a href="#reading">Read</a></th>
+          <th><a href="#creating-content">Create</a></th>
+          <th><a href="#updating">Update</a></th>
+          <th><a href="#deleting">Delete</a></th>
+          <th><a href="#subscribing">Subscription</a></th>
+          <th><a href="#delivery">Delivery</a></th>
+          <th><a href="#profiles">Profiles</a></th>
+        </tr>
+        <tr>
+          <td style="text-align:left;">ActivityPub</td>
+          <td></td>
+          <td></td>
+          <td>X</td>
+          <td>X</td>
+          <td>X</td>
+          <td>X</td>
+          <td>X</td>
+          <td>X</td>
+          <td>X</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">ActivityStreams 2.0</td>
+          <td>X</td>
+          <td>X</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">jf2</td>
+          <td>X</td>
+          <td>X</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">Linked Data Notifications</td>
+          <td></td>
+          <td></td>
+          <td>X</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>X</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="text-align:left;" style="text-align:left;">Micropub</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>X</td>
+          <td>X</td>
+          <td>X</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">Post-type discovery<br></td>
+          <td></td>
+          <td></td>
+          <td>X</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">Webmention</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>X</td>
+          <td></td>
+        </tr>
       </table>
     </section>
   </section>
 
-  <section property="bibo:hasPart" resource="#reading" typeof="bibo:Chapter" id="reading">
-    <!--OddPage-->
-    <h2 resource="#h-reading" id="h-reading"><span property="xhv:role" resource="xhv:heading"><span class="secno">2. </span>Reading</span></h2>
+  <section id="reading">
+  <h2>Reading</h2>
 
     <p>If you are a content publisher, this section is about how you should publish your content. If you are a content consumer, this is what you should expect to consume.</p>
 
-    <section property="bibo:hasPart" resource="#content-representation" typeof="bibo:Chapter" id="content-representation">
-      <h3 resource="#h-content-representation" id="h-content-representation"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1 </span>Content representation</span></h3>
+    <section id="content-representation">
+      <h3>Content representation</h3>
+      
+      <p>Content MUST be available as [[ActivityStreams2]] JSON and MAY additionally be served as an alternative syntax. If a URL does not return [[ActivityStreams2]] JSON, consumers SHOULD look for the JSON format via a <code>rel="alternate" type="application/activity+json"</code> link (which could be to a different domain, for third-party services which dynamically generate [[ActivityStreams2]] JSON on behalf of the publisher). [[ActivityStreams2]] content MUST be served with the Content-Type <code>application/activity+json</code> or, if necessary for JSON-LD extended implementations, <code>application/ld+json; profile="http://www.w3.org/ns/activitystreams"</code>.</p>
+      
+      <p>Content MUST be described using the [[ActivityStreams2]] vocabulary, and MAY use other vocabularies in addition or instead, per the [[ActivityStreams2]] extension mechanism.</p>
 
-      <p>Content <em title="MUST" class="rfc2119">MUST</em> be available as [<cite><a href="#bib-ActivityStreams2" class="bibref">ActivityStreams2</a></cite>] JSON and <em title="MAY" class="rfc2119">MAY</em> additionally be served as an alternative syntax. If a URL does not return [<cite><a href="#bib-ActivityStreams2" class="bibref">ActivityStreams2</a></cite>] JSON, consumers <em title="SHOULD" class="rfc2119">SHOULD</em> look for the JSON format via a <code>rel="alternate" type="application/activity+json"</code> link (which could be to a different domain, for third-party services which dynamically generate [<cite><a href="#bib-ActivityStreams2" class="bibref">ActivityStreams2</a></cite>] JSON on behalf of the publisher). [<cite><a href="#bib-ActivityStreams2" class="bibref">ActivityStreams2</a></cite>] content <em title="MUST" class="rfc2119">MUST</em> be served with the Content-Type <code>application/activity+json</code> or, if necessary for JSON-LD extended implementations, <code>application/ld+json; profile="http://www.w3.org/ns/activitystreams"</code>.</p>
+      <p>[[ActivityStreams2]] builds upon [[AS1]] and is not fully backwards compatible; <a href="http://www.w3.org/TR/activitystreams-core#activitystreams-1.0">the relationship between AS1 and AS2 is documented in the AS2 spec</a>. If you have implemented [[AS1]], you should transition to [[ActivityStreams2]].
 
-      <p>Content <em title="MUST" class="rfc2119">MUST</em> be described using the [<cite><a href="#bib-ActivityStreams2" class="bibref">ActivityStreams2</a></cite>] vocabulary, and <em title="MAY" class="rfc2119">MAY</em> use other vocabularies in addition or instead, per the [<cite><a href="#bib-ActivityStreams2" class="bibref">ActivityStreams2</a></cite>] extension mechanism.</p>
-
-      <p>[<cite><a href="#bib-ActivityStreams2" class="bibref">ActivityStreams2</a></cite>] builds upon [<cite><a href="#bib-AS1" class="bibref">AS1</a></cite>] and is not fully backwards compatible; <a href="http://www.w3.org/TR/activitystreams-core#activitystreams-1.0">the relationship between AS1 and AS2 is documented in the AS2 spec</a>. If you have implemented [<cite><a href="#bib-AS1" class="bibref">AS1</a></cite>], you should transition to [<cite><a href="#bib-ActivityStreams2" class="bibref">ActivityStreams2</a></cite>].
-
-      </p>
-      <p><strong>[<cite><a href="#bib-Activitypub" class="bibref">Activitypub</a></cite>]</strong> exposes all content as [<cite><a href="#bib-ActivityStreams2" class="bibref">ActivityStreams2</a></cite>] JSON.</p>
+      <p><strong>[[Activitypub]]</strong> exposes all content as [[ActivityStreams2]] JSON.</p>
 
     </section>
-
-    <section property="bibo:hasPart" resource="#objects" typeof="bibo:Chapter" id="objects">
-      <h3 resource="#h-objects" id="h-objects"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.2 </span>Objects</span></h3>
-
-      <p>All objects <em title="MUST" class="rfc2119">MUST</em> have URLs in the <code>id</code> property, which return the properties of an object according to <a href="#content-representation">content representation</a>, and depending on the requester's right to access the content.</p>
+    <section id="objects">
+      <h3>Objects</h3>
+    
+      <p>All objects MUST have URLs in the <code>id</code> property, which return the properties of an object according to <a href="#content-representation">content representation</a>, and depending on the requester's right to access the content.</p>
     </section>
-
-    <section property="bibo:hasPart" resource="#streams" typeof="bibo:Chapter" id="streams">
-      <h3 resource="#h-streams" id="h-streams"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.3 </span>Streams</span></h3>
-
-      <p>Each stream <em title="MUST" class="rfc2119">MUST</em> have a URL which <em title="MUST" class="rfc2119">MUST</em> result in the contents of the stream (according to the requester's right to access, and could be paged), and <em title="MAY" class="rfc2119">MAY</em> include additional metadata about the stream (such as title, description).</p>
-
-      <p>Each <a href="#objects">object</a> in a stream <em title="MUST" class="rfc2119">MUST</em> contain at least its URL, which can be dereferenced to retrieve all properties of the object, and <em title="MAY" class="rfc2119">MAY</em> contain other properties of the object.</p>
-
-      <p>One user may publish one or more streams of content. Streams may be generated automatically or manually, and might be segregated by post type, topic, audience, or any arbitrary criteria decided by the curator of the stream. A user <a href="#profiles">profile</a> <em title="MAY" class="rfc2119">MAY</em> include links to multiple streams, which a consumer could follow to read or subscribe to.</p>
-
-      <p><strong>[<cite><a href="#bib-Activitypub" class="bibref">Activitypub</a></cite>]</strong> specifies four feeds that <em title="MUST" class="rfc2119">MUST</em> be accessible from a profile via the following properties:</p>
+    <section id="streams">
+      <h3>Streams</h3>
+    
+      <p>Each stream MUST have a URL which MUST result in the contents of the stream (according to the requester's right to access, and could be paged), and MAY include additional metadata about the stream (such as title, description).</p>
+      
+      <p>Each <a href="#objects">object</a> in a stream MUST contain at least its URL, which can be dereferenced to retrieve all properties of the object, and MAY contain other properties of the object.</p>
+      
+      <p>One user may publish one or more streams of content. Streams may be generated automatically or manually, and might be segregated by post type, topic, audience, or any arbitrary criteria decided by the curator of the stream. A user <a href="#profiles">profile</a> MAY include links to multiple streams, which a consumer could follow to read or subscribe to.</p>
+      
+      <p><strong>[[Activitypub]]</strong> specifies four feeds that MUST be accessible from a profile via the following properties:</p>
 
       <ul>
-        <li><code>inbox</code>: A reference to an [<cite><a href="#bib-ActivityStreams2" class="bibref">ActivityStreams2</a></cite>] collection comprising of all the messages received by the actor.</li>
-        <li><code>outbox</code>: An [<cite><a href="#bib-ActivityStreams2" class="bibref">ActivityStreams2</a></cite>] collection comprising of all the messages produced by the actor.</li>
-        <li><code>following</code>: An [<cite><a href="#bib-ActivityStreams2" class="bibref">ActivityStreams2</a></cite>] collection of the actors that this actor is following.</li>
-        <li><code>followers</code>: An [<cite><a href="#bib-ActivityStreams2" class="bibref">ActivityStreams2</a></cite>] collection of the actors that follow this actor.</li>
+        <li><code>inbox</code>: A reference to an [[ActivityStreams2]] collection comprising of all the messages received by the actor.</li>
+        <li><code>outbox</code>: An [[ActivityStreams2]] collection comprising of all the messages produced by the actor.</li>
+        <li><code>following</code>: An [[ActivityStreams2]] collection of the actors that this actor is following.</li>
+        <li><code>followers</code>: An [[ActivityStreams2]] collection of the actors that follow this actor.</li>
       </ul>
 
-      <p>[<cite><a href="#bib-Activitypub" class="bibref">Activitypub</a></cite>] also specifies a further property for accessing additional feeds, which <em title="MAY" class="rfc2119">MAY</em> be included in a profile:</p>
+      <p>[[Activitypub]] also specifies a further property for accessing additional feeds, which MAY be included in a profile:</p>
 
       <ul>
         <li><code>streams</code>: A list of supplementary Collections which may be of interest. </li>
       </ul>
+      
+      <p class="issue">Activitypub discovery mechanism for this to be specified, likely link relations per <a href="https://github.com/w3c-social/activitypub/issues/50">issue 50</a>.</p>
 
-      <div id="issue-1" class="issue">
-        <div id="h-issue1" role="heading" aria-level="4" class="issue-title marker"><span>Issue 1</span></div>
-        <p class="">Activitypub discovery mechanism for this to be specified, likely link relations per <a href="https://github.com/w3c-social/activitypub/issues/50">issue 50</a>.</p>
-      </div>
+      <p>[[Activitypub]] specifies special behavior for activities with types <code>Add</code> and <code>Remove</code>. When a server receives such an activity in the <code>outbox</code>, and the <code>target</code> is a Collection, it MUST add the <code>object</code> to the <code>target</code> (for <code>Add</code>) or remove the <code>object</code> from the <code>target</code> (for <code>Remove</code>).
 
-      <p>[<cite><a href="#bib-Activitypub" class="bibref">Activitypub</a></cite>] specifies special behavior for activities with types <code>Add</code> and <code>Remove</code>. When a server receives such an activity in the <code>outbox</code>, and the <code>target</code> is a Collection, it <em title="MUST" class="rfc2119">MUST</em> add the <code>object</code> to the <code>target</code> (for <code>Add</code>) or remove the <code>object</code> from the <code>target</code> (for <code>Remove</code>).
-
-      </p>
     </section>
   </section>
 
-  <section property="bibo:hasPart" resource="#creating-content" typeof="bibo:Chapter" id="creating-content">
-    <!--OddPage-->
-    <h2 resource="#h-creating-content" id="h-creating-content"><span property="xhv:role" resource="xhv:heading"><span class="secno">3. </span>Creating content</span></h2>
+  <section id="creating-content">
+    <h2>Creating content</h2>
 
     <p>Content generated through a client (such as a web form, mobile app, smart device) is created when it is sent to a server for processing, where it is typically stored and usually published (either publicly or to a restricted audience). Clients and servers may independently support creating, updating and deleting; there are no dependencies between them. Authentication and authorization for creating content is left out of scope.</p>
 
-    <p><strong>[<cite><a href="#bib-Activitypub" class="bibref">Activitypub</a></cite>]</strong> clients discover the <code>outbox</code> of the authenticated user from their JSON profile, then make an HTTP POST request with an appropriate [<cite><a href="#bib-ActivityStreams2" class="bibref">ActivityStreams2</a></cite>] activity as a JSON payload. [<cite><a href="#bib-Activitypub" class="bibref">Activitypub</a></cite>] requires use of the [<cite><a href="#bib-ActivityStreams2" class="bibref">ActivityStreams2</a></cite>] vocabulary and syntax, which may be extended with JSON-LD. The URL of the created resource is generated at the discretion of the server. This is an appropriate protocol to use when:</p>
+    <p><strong>[[Activitypub]]</strong> clients discover the <code>outbox</code> of the authenticated user from their JSON profile, then make an HTTP POST request with an appropriate [[ActivityStreams2]] activity as a JSON payload. [[Activitypub]] requires use of the [[ActivityStreams2]] vocabulary and syntax, which may be extended with JSON-LD. The URL of the created resource is generated at the discretion of the server. This is an appropriate protocol to use when:</p>
 
     <ul>
       <li>You want to send/receive a JSON or JSON-LD payload.</li>
-      <li>Your data is described with [<cite><a href="#bib-ActivityStreams2" class="bibref">ActivityStreams2</a></cite>] (optionally extensible via JSON-LD).</li>
+      <li>Your data is described with [[ActivityStreams2]] (optionally extensible via JSON-LD).</li>
     </ul>
 
-    <p><strong>[<cite><a href="#bib-Micropub" class="bibref">Micropub</a></cite>]</strong> clients discover the Micropub endpoint from the current user's homepage (likely entered by the user as part of authentication) from a <code>rel="micropub"</code> link, then make a <code>x-www-form-urlencoded</code> POST request containing the key-value pairs for the attributes of the object being created. The URL of the created resource is generated at the discretion of the server. Micropub requires use of the Microformats 2 [<cite><a href="#bib-h-entry" class="bibref">h-entry</a></cite>] vocabulary, as well as a set of reserved attributes as commands to the server. Any additional key names sent outside of this vocabulary may be ignored by the server.</p>
+    <p><strong>[[Micropub]]</strong> clients discover the Micropub endpoint from the current user's homepage (likely entered by the user as part of authentication) from a <code>rel="micropub"</code> link, then make a <code>x-www-form-urlencoded</code> POST request containing the key-value pairs for the attributes of the object being created. The URL of the created resource is generated at the discretion of the server. Micropub requires use of the Microformats 2 [[h-entry]] vocabulary, as well as a set of reserved attributes as commands to the server. Any additional key names sent outside of this vocabulary may be ignored by the server.</p>
 
-    <p>[<cite><a href="#bib-Micropub" class="bibref">Micropub</a></cite>] requests may alternatively be sent as a JSON payload, the syntax of which is derived from the Microformats 2 parsing algorithm. This is an appropriate protocol to use when:</p>
+    <p>[[Micropub]] requests may alternatively be sent as a JSON payload, the syntax of which is derived from the Microformats 2 parsing algorithm. This is an appropriate protocol to use when:</p>
 
     <ul>
       <li>You want to send/receive a form-encoded or JSON payload.</li>
-      <li>Your data is described with the [<cite><a href="#bib-h-entry" class="bibref">h-entry</a></cite>] syntax and vocabulary.</li>
+      <li>Your data is described with the [[h-entry]] syntax and vocabulary.</li>
       <li>You can rely on out-of-band agreements between clients and servers for vocabulary extensibility.</li>
     </ul>
 
-    <p><strong>[<cite><a href="#bib-LDP" class="bibref">LDP</a></cite>]</strong> servers are written to by sending an HTTP POST request to a <code>Container</code> (any resource on the server which returns <code>Link: &lt;http://www.w3.org/ns/ldp#Container&gt;; rel="type"</code>), containing an RDF payload with attributes of the object being created. An identifier for the created resource is generated at the discretion of the server. The URL is created by appending the identifier to the URL of the <code>Container</code> that was posted to. [<cite><a href="#bib-Solid" class="bibref">Solid</a></cite>] and [<cite><a href="#bib-AnnotationProtocol" class="bibref">AnnotationProtocol</a></cite>] both use slightly altered [<cite><a href="#bib-LDP" class="bibref">LDP</a></cite>] to create content; [<cite><a href="#bib-Solid" class="bibref">Solid</a></cite>] restricts use to only Basic Containers, while the [<cite><a href="#bib-AnnotationProtocol" class="bibref">AnnotationProtocol</a></cite>] specifies the [<cite><a href="#bib-AnnotationVocab" class="bibref">AnnotationVocab</a></cite>] and primary syntax as JSON-LD. This is an appropriate protocol to use when:</p>
+    <p><strong>[[LDP]]</strong> servers are written to by sending an HTTP POST request to a <code>Container</code> (any resource on the server which returns <code>Link: &lt;http://www.w3.org/ns/ldp#Container&gt;; rel="type"</code>), containing an RDF payload with attributes of the object being created. An identifier for the created resource is generated at the discretion of the server. The URL is created by appending the identifier to the URL of the <code>Container</code> that was posted to. [[Solid]] and [[AnnotationProtocol]] both use slightly altered [[LDP]] to create content; [[Solid]] restricts use to only Basic Containers, while the [[AnnotationProtocol]] specifies the [[AnnotationVocab]] and primary syntax as JSON-LD. This is an appropriate protocol to use when:</p>
 
     <ul>
       <li>Your data is represented as RDF.</li>
@@ -1043,51 +899,42 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       <li>You prefer a more RESTful API.</li>
     </ul>
 
-    <section property="bibo:hasPart" resource="#updating" typeof="bibo:Chapter" id="updating">
-      <h3 resource="#h-updating" id="h-updating"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.1 </span>Updating</span></h3>
+    <section id="updating">
+      <h3>Updating</h3>
+      
+      <p>Content is updated when a client sends changes to attributes (additions, removals, replacements) to an existing object. If a server has implemented a <a href="#delivery">delivery</a> or <a href="#subscribing">subscription</a> mechanism, when an object is updated, the update MUST be propagated to the original recipients using the same mechanism.</p>
 
-      <p>Content is updated when a client sends changes to attributes (additions, removals, replacements) to an existing object. If a server has implemented a <a href="#delivery">delivery</a> or <a href="#subscribing">subscription</a> mechanism, when an object is updated, the update <em title="MUST" class="rfc2119">MUST</em> be propagated to the original recipients using the same mechanism.</p>
+      <p><strong>[[Activitypub]]</strong> clients replace the complete object by sending an HTTP POST request containing an [[ActivityStreams2]] <code>Update</code> activity to the <code>outbox</code> of the authenticated user, where the <code>object</code> is a nested object, including an <code>id</code>, which serves as the replacement.</p>
 
-      <p><strong>[<cite><a href="#bib-Activitypub" class="bibref">Activitypub</a></cite>]</strong> clients replace the complete object by sending an HTTP POST request containing an [<cite><a href="#bib-ActivityStreams2" class="bibref">ActivityStreams2</a></cite>] <code>Update</code> activity to the <code>outbox</code> of the authenticated user, where the <code>object</code> is a nested object, including an <code>id</code>, which serves as the replacement.</p>
+      <p class="issue">ActivityPub currently only supports updates of a whole object at once. <a href="https://github.com/w3c-social/activitypub/issues/85">Issue 85 for partial updates</a>.</p>
 
-      <div id="issue-2" class="issue">
-        <div id="h-issue2" role="heading" aria-level="4" class="issue-title marker"><span>Issue 2</span></div>
-        <p class="">ActivityPub currently only supports updates of a whole object at once. <a href="https://github.com/w3c-social/activitypub/issues/85">Issue 85 for partial updates</a>.</p>
-      </div>
+      <p><strong>[[Micropub]]</strong> clients perform updates, as either form-encoded or JSON POST requests, using the <code>mp-action=update</code> parameter, as well as a <code>replace</code>, <code>add</code> or <code>delete</code> property containing the updates to make, to the Micropub endpoint (discovery described in <a href="#creating-content">creating</a>). <code>replace</code> replaces all values of the specified property. If the property does not exist already, it is created. <code>add</code> adds new values to the specified property without changing the existing ones. If the property does not exist already, it is created. <code>delete</code> removes the specified property; you can also remove properties by value by specifying the value.</p>
 
-      <p><strong>[<cite><a href="#bib-Micropub" class="bibref">Micropub</a></cite>]</strong> clients perform updates, as either form-encoded or JSON POST requests, using the <code>mp-action=update</code> parameter, as well as a <code>replace</code>, <code>add</code> or <code>delete</code> property containing the updates to make, to the Micropub endpoint (discovery described in <a href="#creating-content">creating</a>). <code>replace</code> replaces all values of the specified property. If the property does not exist already, it is created. <code>add</code> adds new values to the specified property without changing the existing ones. If the property does not exist already, it is created. <code>delete</code> removes the specified property; you can also remove properties by value by specifying the value.</p>
-
-      <p><strong>[<cite><a href="#bib-LDP" class="bibref">LDP</a></cite>]</strong> clients perform replacement-style updates by sending an HTTP PUT request to the URL of the object to be updated. Partial-style updates are performed with an HTTP PATCH request.</p>
-
+      <p><strong>[[LDP]]</strong> clients perform replacement-style updates by sending an HTTP PUT request to the URL of the object to be updated. Partial-style updates are performed with an HTTP PATCH request.</p>
+      
 
     </section>
+    <section id="deleting">
+      <h3>Deleting</h3>
+      
+      <p>ontent is deleted when a client sends a request to delete an existing object. If a server has implemented a <a href="#delivery">delivery</a> or <a href="#subscribing">subscription</a> mechanism, when an object is deleted, the deletion MUST be propagated to the original recipients using the same mechanism.</p>
 
-    <section property="bibo:hasPart" resource="#deleting" typeof="bibo:Chapter" id="deleting">
-      <h3 resource="#h-deleting" id="h-deleting"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2 </span>Deleting</span></h3>
+      <p><strong>[[Activitypub]]</strong> clients delete an object by sending an HTTP POST request containing an [[ActivityStreams2]] <code>Delete</code> activity to the <code>outbox</code> of the authenticated user. Servers MUST <em>replace</em> the <code>object</code> of this activity with a tombstone, and return a <code>410 Gone</code> status code from its URL.</p>
 
-      <p>ontent is deleted when a client sends a request to delete an existing object. If a server has implemented a <a href="#delivery">delivery</a> or <a href="#subscribing">subscription</a> mechanism, when an object is deleted, the deletion <em title="MUST" class="rfc2119">MUST</em> be propagated to the original recipients using the same mechanism.</p>
+      <p><strong>[[Micropub]]</strong> delete requests are two key-value pairs, in form-encoded or JSON: `mp-action`: `delete` and `url`: `url-to-be-deleted`, sent to the Micropub endpoint (discovery described in <a href="#creating-content">creating</a>).</p>
 
-      <p><strong>[<cite><a href="#bib-Activitypub" class="bibref">Activitypub</a></cite>]</strong> clients delete an object by sending an HTTP POST request containing an [<cite><a href="#bib-ActivityStreams2" class="bibref">ActivityStreams2</a></cite>] <code>Delete</code> activity to the <code>outbox</code> of the authenticated user. Servers <em title="MUST" class="rfc2119">MUST</em> <em>replace</em> the <code>object</code> of this activity with a tombstone, and return a <code>410 Gone</code> status code from its URL.</p>
-
-      <p><strong>[<cite><a href="#bib-Micropub" class="bibref">Micropub</a></cite>]</strong> delete requests are two key-value pairs, in form-encoded or JSON: `mp-action`: `delete` and `url`: `url-to-be-deleted`, sent to the Micropub endpoint (discovery described in <a href="#creating-content">creating</a>).</p>
-
-      <p><strong>[<cite><a href="#bib-LDP" class="bibref">LDP</a></cite>]</strong> deletes are performed by sending an HTTP DELETE request to the URL of the object to be deleted.</p>
-
-    </section>
+      <p><strong>[[LDP]]</strong> deletes are performed by sending an HTTP DELETE request to the URL of the object to be deleted.</p>
+      
   </section>
-
-  <section property="bibo:hasPart" resource="#subscribing" typeof="bibo:Chapter" id="subscribing">
-    <!--OddPage-->
-    <h2 resource="#h-subscribing" id="h-subscribing"><span property="xhv:role" resource="xhv:heading"><span class="secno">4. </span>Subscribing</span></h2>
+</section>
+  <section id="subscribing">
+    <h2>Subscribing</h2>
 
     <p>An agent (client or server) may <em>ask</em> to be notified of changes to a content object (eg. edits, new replies) or stream of content (eg. objects added or removed from a particular stream). This is <em>subscribing</em>. A server may also receive notifications of changes to content it has <em>not subscribed</em> to: see <a href="#delivery">delivery</a>.</p>
+    
+    <p class="issue">Working group has yet to discuss this in depth, subject to significant change.</p>
 
-    <div id="issue-3" class="issue">
-      <div id="h-issue3" role="heading" aria-level="3" class="issue-title marker"><span>Issue 3</span></div>
-      <p class="">Working group has yet to discuss this in depth, subject to significant change.</p>
-    </div>
-
-    <p><strong>[<cite><a href="#bib-Activitypub" class="bibref">Activitypub</a></cite>]</strong> servers distribute the activities of an actor by sending POST requests containing the activities as JSON payloads to the <code>inbox</code> of all actors in an actor's <code>Followers</code> collection. For subscription requests, special behavior is defined for servers when an [<cite><a href="#bib-ActivityStreams2" class="bibref">ActivityStreams2</a></cite>] <code>Follow</code> activity is appears in an actor's <code>outbox</code> or <code>inbox</code>.</p>
+    <p><strong>[[Activitypub]]</strong> servers distribute the activities of an actor by sending POST requests containing the activities as JSON payloads to the <code>inbox</code> of all actors in an actor's <code>Followers</code> collection. For subscription requests, special behavior is defined for servers when an [[ActivityStreams2]] <code>Follow</code> activity is appears in an actor's <code>outbox</code> or <code>inbox</code>.</p> 
 
     <ul>
       <li>For <code>outbox</code> (an outgoing subscription request): The activity is <a href="#delivery">delivered</a> as usual to the <code>object</code>'s <code>inbox</code>, and additionally the <code>object</code> is added to the actor's <code>Following</code> collection.</li>
@@ -1096,7 +943,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <p>It works when the publisher and subscriber are on different domains, thus serving as a federation protocol. This is a suitable subscription mechanism when:</p>
 
     <ul>
-      <li>The objects and streams being subscribed to are described with [<cite><a href="#bib-ActivityStreams2" class="bibref">ActivityStreams2</a></cite>].</li>
+      <li>The objects and streams being subscribed to are described with [[ActivityStreams2]].</li>
       <li>The subscriber wants to request updates from a specific actor (rather than objects, streams or threads, see <a href="https://github.com/w3c-social/activitypub/issues/80">issue 80</a>.</li>
       <li>You need to send or receive the whole requested resource over the wire (ie. a 'fat ping').</li>
       <li>You need to send or receive JSON payloads only.</li>
@@ -1104,8 +951,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       <li>The publisher is aware of who has subscribed; this is a <em>push</em> mechanism.</li>
     </ul>
 
-    <p><strong>[<cite><a href="#bib-Solid" class="bibref">Solid</a></cite>]</strong> uses websockets to allow client-side applications to subscribe to changes in objects ([<cite><a href="#bib-LDP" class="bibref">LDP</a></cite>] Resources) and streams ([<cite><a href="#bib-LDP" class="bibref">LDP</a></cite>] Containers). The websocket endpoint is advertised in the <code>Updates-Via</code> HTTP Link Header. The subscriber sends the keyword <code>sub</code> followed by an empty space and then the URI of the resource, to the target’s websockets URI. The target’s server sends a websockets message containing the keyword <code>pub</code>, followed by an empty space and the URI of the resource that has changed, whenever there is a change. It works when the publisher and subscriber are on different domains, thus serving as a federation protocol. This is a suitable subscription mechanism when:</p>
-
+    <p><strong>[[Solid]]</strong> uses websockets to allow client-side applications to subscribe to changes in objects ([[LDP]] Resources) and streams ([[LDP]] Containers). The websocket endpoint is advertised in the <code>Updates-Via</code> HTTP Link Header. The subscriber sends the keyword <code>sub</code> followed by an empty space and then the URI of the resource, to the target’s websockets URI. The target’s server sends a websockets message containing the keyword <code>pub</code>, followed by an empty space and the URI of the resource that has changed, whenever there is a change. It works when the publisher and subscriber are on different domains, thus serving as a federation protocol. This is a suitable subscription mechanism when:</p>
+ 
     <ul>
       <li>You send live updates over websockets.</li>
       <li>You can send and receive on the URL of the requested resource over the wire (ie. a 'thin ping').</li>
@@ -1113,39 +960,34 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       <li>The publisher is aware of who has subscribed; this is a <em>push</em> mechanism.</li>
     </ul>
 
-    <p><strong>[<cite><a href="#bib-Webmention" class="bibref">Webmention</a></cite>]</strong> can be deployed as a subscription mechanism through the [<cite><a href="#bib-Salmentions" class="bibref">Salmentions</a></cite>] extension. Documents contain links to the sources of received webmentions along with the content. Every time the document is updated, including when new incoming webmentions are added, the server (re-)sends webmentions to every link. Thus, all documents which originally sent a webmention receive a webmention back, enabling them to parse the document for changes, and detect new replies in a thread, as well as changes to the original document. It works when the publisher and subscriber are on different domains, thus serving as a federation protocol. This is a suitable subscription mechanism when:</p>
+    <p><strong>[[Webmention]]</strong> can be deployed as a subscription mechanism through the [[Salmentions]] extension. Documents contain links to the sources of received webmentions along with the content. Every time the document is updated, including when new incoming webmentions are added, the server (re-)sends webmentions to every link. Thus, all documents which originally sent a webmention receive a webmention back, enabling them to parse the document for changes, and detect new replies in a thread, as well as changes to the original document. It works when the publisher and subscriber are on different domains, thus serving as a federation protocol. This is a suitable subscription mechanism when:</p>
 
     <ul>
       <li>The subscriber wants to subscribe to a specific thread or object.</li>
-      <li>The subscriber has a document which links to that thread or object, and has sent a [<cite><a href="#bib-Webmention" class="bibref">Webmention</a></cite>] about it.</li>
-      <li>The publisher displays links to the sources of received webmentions with their content.</li>
+      <li>The subscriber has a document which links to that thread or object, and has sent a [[Webmention]] about it.</li>
+      <li>The publisher displays links to the sources of received webmentions with their content.</li> 
       <li>The subscriber has linked to a document and wants to be notified of further changes.</li>
-      <li>The subscriber has implemented [<cite><a href="#bib-Webmention" class="bibref">Webmention</a></cite>] receiving.</li>
+      <li>The subscriber has implemented [[Webmention]] receiving.</li>
       <li>The publisher is aware of who has subscribed; this is a <em>push</em> mechanism.</li>
     </ul>
-
+    
     <p>Other options yet to be debated...</p>
-
+    
     <ul>
       <li><strong>Web Push Protocol</strong>: The subscriber follows the <code>urn:ietf:params:push</code> link relation to the target’s Push Service, and then <a href="https://tools.ietf.org/html/draft-ietf-webpush-protocol-02#section-4">Subscribes for Push Messages</a></li>
       <li><strong>PubSubHubbub</strong>: The subscriber discovers the target’s hub, and sends a form-encoded <code>POST</code> request containing values for <code>hub.mode</code> (“subscribe”), <code>hub.topic</code> and <code>hub.callback</code>. When the target posts new content, the target’s server sends a form-encoded <code>POST</code> to the hub with values for <code>hub.mode</code> (“publish”) and <code>hub.url</code> and the hub checks the URL for new content and <code>POST</code>s updates to the subscriber’s callback URL. (<em>See <a href="http://pubsubhubbub.github.io/PubSubHubbub/pubsubhubbub-core-0.4.html">PuSH 0.4</a> and <a href="http://indiewebcamp.com/How_to_publish_and_consume_PubSubHubbub">How To Publish And Consume PuSH</a></em>)</li>
-      <li>Pull, ie. just reading an [<cite><a href="#bib-ActivityStreams2" class="bibref">ActivityStreams2</a></cite>] feed.</li>
+      <li>Pull, ie. just reading an [[ActivityStreams2]] feed.</li>
     </ul>
 
-    <div class="note">
-      <div id="h-note1" role="heading" aria-level="3" class="note-title marker"><span>Note</span></div>
-      <p class="">Nothing should rely on implementation of a subscription mechanism.</p>
-    </div>
-
+    <p class="note">Nothing should rely on implementation of a subscription mechanism.</p>
+    
   </section>
-
-  <section property="bibo:hasPart" resource="#delivery" typeof="bibo:Chapter" id="delivery">
-    <!--OddPage-->
-    <h2 resource="#h-delivery" id="h-delivery"><span property="xhv:role" resource="xhv:heading"><span class="secno">5. </span>Delivery</span></h2>
-
+  <section id="delivery">
+    <h2>Delivery</h2>
+    
     <p>A user or application may wish to push a notification to another user, for example because they have linked to (replied, liked, bookmarked, reposted, …) their content or linked to (tagged, addressed) the user directly, or to make the recipient aware of a change in state of some document or resource on the Web.</p>
 
-    <p><strong>[<cite><a href="#bib-Webmention" class="bibref">Webmention</a></cite>]</strong> provides an API for sending and receiving notifications when a relationship is created between two documents. It works when the two documents are on different domains, thus serving as a federation protocol. This is a suitable notification mechanism when:</p>
+    <p><strong>[[Webmention]]</strong> provides an API for sending and receiving notifications when a relationship is created between two documents. It works when the two documents are on different domains, thus serving as a federation protocol. This is a suitable notification mechanism when:</p>
 
     <ul>
       <li>You have a document (source) which links to another document (target).</li>
@@ -1153,73 +995,63 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       <li>The only data you need to send over the wire are the URLs of the source and target documents (ie. a 'thin ping').</li>
     </ul>
 
-    <p>Discovery of the [<cite><a href="#bib-Webmention" class="bibref">Webmention</a></cite>] endpoint (a script which can process incoming webmentions) is through a link relation (<code>rel="webmention"</code>), either in the HTTP Header or body of the target. This endpoint does not need to be on the same domain as the target, so webmention receiving can be delegated to a third party.</p>
+    <p>Discovery of the [[Webmention]] endpoint (a script which can process incoming webmentions) is through a link relation (<code>rel="webmention"</code>), either in the HTTP Header or body of the target. This endpoint does not need to be on the same domain as the target, so webmention receiving can be delegated to a third party.</p>
 
-    <p>[<cite><a href="#bib-Webmention" class="bibref">Webmention</a></cite>] uses <code>x-www-form-urlencoded</code> for the source and target as parameters in an HTTP POST request. This means a webmention can be triggered from a web form or from the commandline with <code>curl</code>. Integration with existing applications is straightforward through translating this form-encoded data into JSON, RDF (<a href="http://www.w3.org/ns/webmention#">namespace</a>), or another preferred syntax at the recievers end if necessary. There are no constraints on the syntax of the source and target documents.</p>
+    <p>[[Webmention]] uses <code>x-www-form-urlencoded</code> for the source and target as parameters in an HTTP POST request. This means a webmention can be triggered from a web form or from the commandline with <code>curl</code>. Integration with existing applications is straightforward through translating this form-encoded data into JSON, RDF (<a href="http://www.w3.org/ns/webmention#">namespace</a>), or another preferred syntax at the recievers end if necessary. There are no constraints on the syntax of the source and target documents.</p>
 
-    <p>[<cite><a href="#bib-Webmention" class="bibref">Webmention</a></cite>] can be extended by adding additional parameters to the POST request; applications must have prior agreement in order to understand them, and there is potential for collision of extension terms.</p>
-
-    <p><strong>[<cite><a href="#bib-Activitypub" class="bibref">Activitypub</a></cite>]</strong> provides a JSON-based API for sending and receiving [<cite><a href="#bib-ActivityStreams2" class="bibref">ActivityStreams2</a></cite>] activities as notifications. It works when the two documents are on different domains, thus serving as a federation protocol. This is a suitable notification mechanism when:</p>
+    <p>[[Webmention]] can be extended by adding additional parameters to the POST request; applications must have prior agreement in order to understand them, and there is potential for collision of extension terms.</p>
+    
+    <p><strong>[[Activitypub]]</strong> provides a JSON-based API for sending and receiving [[ActivityStreams2]] activities as notifications. It works when the two documents are on different domains, thus serving as a federation protocol. This is a suitable notification mechanism when:</p>
 
     <ul>
-      <li>You describe the notification with [<cite><a href="#bib-ActivityStreams2" class="bibref">ActivityStreams2</a></cite>].</li>
+      <li>You describe the notification with [[ActivityStreams2]].</li>
       <li>You need to send or receive the whole notification over the wire (ie. a 'fat ping').</li>
       <li>You need to send or receive JSON payloads only.</li>
       <li>You need to add additional properties to your notifications unambiguously with JSON-LD.</li>
       <li>You need to send the same notification to multiple users from one activity.</li>
     </ul>
 
-    <p>The endpoint which processes incoming notifications is a user's [<cite><a href="#bib-Activitypub" class="bibref">Activitypub</a></cite>] <code>inbox</code>, discoverable from the target user's profile. The recipient user may be addressed directly (through <code>object</code>, <code>target</code>, <code>to</code>, <code>cc</code>, and/or <code>bcc</code>), and/or inferred as the owner of another resource which is addressed (through <code>object</code>, <code>target</code> and/or <code>inReplyTo</code>).</p>
+    <p>The endpoint which processes incoming notifications is a user's [[Activitypub]] <code>inbox</code>, discoverable from the target user's profile. The recipient user may be addressed directly (through <code>object</code>, <code>target</code>, <code>to</code>, <code>cc</code>, and/or <code>bcc</code>), and/or inferred as the owner of another resource which is addressed (through <code>object</code>, <code>target</code> and/or <code>inReplyTo</code>).</p>
 
-    <p>An [<cite><a href="#bib-Activitypub" class="bibref">Activitypub</a></cite>] server delivers the entire activity to all discovered endpoints as a JSON payload of an HTTP POST request.</p>
+    <p>An [[Activitypub]] server delivers the entire activity to all discovered endpoints as a JSON payload of an HTTP POST request.</p>
 
-    <p>An [<cite><a href="#bib-Activitypub" class="bibref">Activitypub</a></cite>] server receiving such an activity must verify the notification is accurate (by fetching the source, or some prior trust arrangement with the sender, eg. through an authentication token or digital signature).</p>
+    <p>An [[Activitypub]] server receiving such an activity must verify the notification is accurate (by fetching the source, or some prior trust arrangement with the sender, eg. through an authentication token or digital signature).</p>
 
-    <p>[<cite><a href="#bib-Activitypub" class="bibref">Activitypub</a></cite>] delivery can be extended through the [<cite><a href="#bib-ActivityStreams2" class="bibref">ActivityStreams2</a></cite>] extension mechanism, with JSON-LD.</p>
+    <p>[[Activitypub]] delivery can be extended through the [[ActivityStreams2]] extension mechanism, with JSON-LD.</p>
 
-    <div id="issue-4" class="issue">
-      <div id="h-issue4" role="heading" aria-level="3" class="issue-title marker"><span>Issue 4</span></div>
-      <p class="">Add Solid Notifications for pure RDF usage.</p>
-    </div>
+    <p class="issue">Add Solid Notifications for pure RDF usage.</p>
 
-    <div class="note">
-      <div id="h-note2" role="heading" aria-level="3" class="note-title marker"><span>Note</span></div>
-      <p class=""><em>Note: we need to leave it open for users to refuse content they have not explicitly subscribed to, ie. nothing else should rely on implementation of Delivery.</em></p>
-    </div>
+    <p class="note"><em>Note: we need to leave it open for users to refuse content they have not explicitly subscribed to, ie. nothing else should rely on implementation of Delivery.</em></p>
   </section>
+  </section>
+  <section id="profiles">
+      <h2>Profiles</h2>
 
-  <section property="bibo:hasPart" resource="#profiles" typeof="bibo:Chapter" id="profiles">
-    <!--OddPage-->
-    <h2 resource="#h-profiles" id="h-profiles"><span property="xhv:role" resource="xhv:heading"><span class="secno">6. </span>Profiles</span></h2>
+      <p class="issue">Stub, needs expansion</p>
 
-    <div id="issue-5" class="issue">
-      <div id="h-issue5" role="heading" aria-level="3" class="issue-title marker"><span>Issue 5</span></div>
-      <p class="">Stub, needs expansion</p>
-    </div>
-
-    <p>The subject of a profile document can be a person, persona, organisation, bot, location, … the type of the subject of the profile is not required. Each profile document <em title="MUST" class="rfc2119">MUST</em> have a URL which <em title="SHOULD" class="rfc2119">SHOULD</em> return attributes of the subject of the profile; <em title="SHOULD" class="rfc2119">SHOULD</em> return at least one link to <a href="#reading">a stream of content</a> and <em title="MAY" class="rfc2119">MAY</em> return content the subject has created. A JSON format <em title="MUST" class="rfc2119">MUST</em> be available; other content types <em title="MAY" class="rfc2119">MAY</em> be returned as well.</p>
-
-    <section property="bibo:hasPart" resource="#relationships" typeof="bibo:Chapter" id="relationships">
-      <h3 resource="#h-relationships" id="h-relationships"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.1 </span>Relationships</span></h3>
-
-      <p>Semantics and representation of personal relationships are implementation specific. This specification deals with relationships only when distribution of content is affected, for example if one user ‘friending’ another triggers a subscription request from the first user’s server to the second. Lists of other relationships <em title="MAY" class="rfc2119">MAY</em> be discoverable from a user profile, <em title="SHOULD" class="rfc2119">SHOULD</em> be represented according to the ActivityStremas 2 syntax and <em title="MAY" class="rfc2119">MAY</em> (and are likely to) use extension vocabularies as needed.</p>
-
-      <ul>
-        <li><strong>Activitypub:</strong> When a server receives a <code>Follow</code> Activity in its <code>inbox</code>, the subject is added to a <code>Followers</code> <code>Collection</code>, which is discoverable from the subject’s profile.</li>
-      </ul>
-    </section>
-
-    <section property="bibo:hasPart" resource="#authorization-and-access-control" typeof="bibo:Chapter" id="authorization-and-access-control">
-      <h3 resource="#h-authorization-and-access-control" id="h-authorization-and-access-control"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.2 </span>Authorization and access control</span></h3>
-
-      <p>Servers may restrict/authorize access to content however they want?</p>
-
-      <ul>
-        <li><strong>ActivityPub:</strong> see <a href="http://w3c-social.github.io/activitypub/#authorization">auth</a></li>
-        <li><strong>Indieweb:</strong> see <a href="https://indiewebcamp.com/private_posts">private posts</a>, <a href="https://indiewebcamp.com/private-webmention">private webmention</a></li>
-        <li><strong>Solid:</strong> see <a href="https://github.com/solid/solid-spec#web-access-control">acl</a></li>
-      </ul>
-    </section>
+      <p>The subject of a profile document can be a person, persona, organisation, bot, location, … the type of the subject of the profile is not required. Each profile document MUST have a URL which SHOULD return attributes of the subject of the profile; SHOULD return at least one link to <a href="#reading">a stream of content</a> and MAY return content the subject has created. A JSON format MUST be available; other content types MAY be returned as well.</p>
+      
+      <section id="relationships">
+        <h3>Relationships</h3>
+      
+        <p>Semantics and representation of personal relationships are implementation specific. This specification deals with relationships only when distribution of content is affected, for example if one user ‘friending’ another triggers a subscription request from the first user’s server to the second. Lists of other relationships MAY be discoverable from a user profile, SHOULD be represented according to the ActivityStremas 2 syntax and MAY (and are likely to) use extension vocabularies as needed.</p>
+        
+        <ul>
+          <li><strong>Activitypub:</strong> When a server receives a <code>Follow</code> Activity in its <code>inbox</code>, the subject is added to a <code>Followers</code> <code>Collection</code>, which is discoverable from the subject’s profile.</li>
+        </ul>
+      </section>
+      
+      <section id="authorization-and-access-control">
+        <h3>Authorization and access control</h3>
+      
+        <p>Servers may restrict/authorize access to content however they want?</p>
+        
+        <ul>
+          <li><strong>ActivityPub:</strong> see <a href="http://w3c-social.github.io/activitypub/#authorization">auth</a></li>
+          <li><strong>Indieweb:</strong> see <a href="https://indiewebcamp.com/private_posts">private posts</a>, <a href="https://indiewebcamp.com/private-webmention">private webmention</a></li>
+          <li><strong>Solid:</strong> see <a href="https://github.com/solid/solid-spec#web-access-control">acl</a></li>
+        </ul>
+      </section>-->
   </section>
 
 
@@ -1230,28 +1062,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
     <section property="bibo:hasPart" resource="#informative-references" typeof="bibo:Chapter" id="informative-references">
       <h3 resource="#h-informative-references" id="h-informative-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">A.1 </span>Informative references</span></h3>
-      <dl resource="" class="bibliography"><dt id="bib-AS1">[AS1]</dt>
-        <dd>J. Snell; M. Atkins; W. Norris; C. Messina; M. Wilkinson; R. Dolin. http://activitystrea.ms. <a property="dc:references" href="http://activitystrea.ms/specs/json/1.0/"><cite>JSON Activity Streams 1.0.</cite></a>. Unofficial. URL: <a property="dc:references" href="http://activitystrea.ms/specs/json/1.0/">http://activitystrea.ms/specs/json/1.0/</a>
-        </dd><dt id="bib-ActivityStreams2">[ActivityStreams2]</dt>
+      <dl resource="" class="bibliography"><dt id="bib-ActivityStreams2">[ActivityStreams2]</dt>
         <dd>James Snell; Evan Prodromou. W3C. <a property="dc:references" href="http://www.w3.org/TR/activitystreams"><cite>ActivityStreams 2.0</cite></a>. W3C Working Draft. URL: <a property="dc:references" href="http://www.w3.org/TR/activitystreams">http://www.w3.org/TR/activitystreams</a>
-        </dd><dt id="bib-Activitypub">[Activitypub]</dt>
-        <dd>Christopher Webber; Jessica Tallon; Owen Shepherd. W3C. <a property="dc:references" href="https://www.w3.org/TR/activitypub/"><cite>ActivityPub</cite></a>. 14 June 2016. W3C Working Draft. URL: <a property="dc:references" href="https://www.w3.org/TR/activitypub/">https://www.w3.org/TR/activitypub/</a>
-        </dd><dt id="bib-AnnotationProtocol">[AnnotationProtocol]</dt>
-        <dd>Rob Sanderson. W3C. <a property="dc:references" href="https://www.w3.org/TR/annotation-protocol/"><cite>Web Annotation Protocol</cite></a>. W3C Working Draft. URL: <a property="dc:references" href="https://www.w3.org/TR/annotation-protocol/">https://www.w3.org/TR/annotation-protocol/</a>
-        </dd><dt id="bib-AnnotationVocab">[AnnotationVocab]</dt>
-        <dd>Robert Sanderson; Paolo Ciccarese; Benjamin Young. W3C. <a property="dc:references" href="https://www.w3.org/TR/annotation-vocab/"><cite>Web Annotation Vocabulary</cite></a>. W3C Working Draft. URL: <a property="dc:references" href="https://www.w3.org/TR/annotation-vocab/">https://www.w3.org/TR/annotation-vocab/</a>
-        </dd><dt id="bib-LDP">[LDP]</dt>
-        <dd>Steve Speicher; John Arwe; Ashok Malhotra. W3C. <a property="dc:references" href="https://www.w3.org/TR/ldp/"><cite>Linked Data Platform 1.0</cite></a>. 26 February 2015. W3C Recommendation. URL: <a property="dc:references" href="https://www.w3.org/TR/ldp/">https://www.w3.org/TR/ldp/</a>
-        </dd><dt id="bib-Micropub">[Micropub]</dt>
-        <dd>Aaron Parecki. W3C. <a property="dc:references" href="https://www.w3.org/TR/micropub/"><cite>Micropub</cite></a>. 13 July 2016. W3C Working Draft. URL: <a property="dc:references" href="https://www.w3.org/TR/micropub/">https://www.w3.org/TR/micropub/</a>
-        </dd><dt id="bib-Salmentions">[Salmentions]</dt>
-        <dd>Ben Roberts, Tantek Çelik. IndieWebCamp. <a property="dc:references" href="http://indiewebcamp.com/Salmention"><cite>Salmentions</cite></a>. Living specification. URL: <a property="dc:references" href="http://indiewebcamp.com/Salmention">http://indiewebcamp.com/Salmention</a>
-        </dd><dt id="bib-Solid">[Solid]</dt>
-        <dd>Andrei Sambra. http://solid.mit.edu. <a property="dc:references" href="https://github.com/solid/solid-spec"><cite>Solid</cite></a>. W3C Editor's Draft. URL: <a property="dc:references" href="https://github.com/solid/solid-spec">https://github.com/solid/solid-spec</a>
-        </dd><dt id="bib-Webmention">[Webmention]</dt>
-        <dd>Aaron Parecki. W3C. <a property="dc:references" href="http://www.w3.org/TR/webmention"><cite>Webmention</cite></a>. W3C Candidate Recommendation. URL: <a property="dc:references" href="http://www.w3.org/TR/webmention">http://www.w3.org/TR/webmention</a>
-        </dd><dt id="bib-h-entry">[h-entry]</dt>
-        <dd>Tantek Çelik. microformats.org. <a property="dc:references" href="http://microformats.org/wiki/h-entry"><cite>h-entry</cite></a>. Living Specification. URL: <a property="dc:references" href="http://microformats.org/wiki/h-entry">http://microformats.org/wiki/h-entry</a>
         </dd>
       </dl>
     </section>
