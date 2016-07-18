@@ -168,7 +168,7 @@ table.th90 th, table.th90 td {
 <script class='remove'>
       var respecConfig = {
           specStatus: "ED",
-          shortName:  "social-web-protocols",
+          shortName:  "social-web-snark",
           editors: [
                 {   name:       "Amy Guy",
                     url:        "http://rhiaro.co.uk/",
@@ -179,7 +179,7 @@ table.th90 th, table.th90 td {
           ],
           previousMaturity: "WD",
           previousPublishDate:  "2016-06-03",
-          edDraftURI: "https://w3c-social.github.io/social-web-protocols",
+          edDraftURI: "https://sws.amy.gy",
           wg:           "Social Web Working Group",
           wgURI:        "https://www.w3.org/Social/WG",
           wgPublicList: "public-socialweb",
@@ -253,14 +253,14 @@ table.th90 th, table.th90 td {
 </head>
 <body>
   <section id="abstract">
-    The Social Web Protocols are a collection of standards which enable various aspects of decentralised social interaction on the Web. This document describes the purposes of each, and how they fit together.
+    The Social Web Protocols are a collection of standards which supposedly enable various aspects of decentralised social interaction on the Web. This document describes all the compromises we made just so that we'd stop blocking each others' specs and grind to a halt entirely. It doesn't describe the hard stuff we haven't even got close to yet. It represents rhiaro's opinion when she's feeling frustrated, and not (necessarily) the opinion of the Social Web Working Group. It shouldn't be taken seriously. Or should it?
   </section>
   <section id="sotd"></section>
 
   <section id="overview">
     <h2>Overview</h2>
 
-    <p>People and the content they create are the core components of the social web; they make up the social graph. This document describes a standard way in which people can:</p>
+    <p>People (unfortunately) and the content they create are the core components of the social web; they make up the social graph. This document describes multiple competing 'standard' ways in which people can:</p>
     
     <ul>
       <li>connect with other people and subscribe to their content;</li>
@@ -273,7 +273,7 @@ table.th90 th, table.th90 td {
     
     <p>These components are core building blocks for interoperable social systems.</p>
     
-    <p>Each of these components can be implemented independently as needed, or all together in one system, as well as extended to meet domain-specific requirements. Users can store their social data across any number of compliant servers, and use compliant clients hosted elsewhere to interact with their own content and the content of others. Put simply, this document tells you, according the recommendations of the Social Web Working Group:</p>
+    <p>Each of these components can be implemented independently as needed, or all together in one system, as well as extended to meet domain-specific requirements. Users can store their social data across any number of compliant (compliant to what?) servers, and use compliant (to something else?) clients hosted elsewhere to interact with their own content and the content of others. Put simply, this document tells you, according the barely coherant recommendations of the Social Web Working Group:</p>
     
     <ul>
       <li>how to <a href="#reading">expose/consume</a> social content (reading).</li>
@@ -286,11 +286,11 @@ table.th90 th, table.th90 td {
     <section id="contents">
       <h3>Contents</h3>
     
-      <p>This is an overview of the current state of specifications of the Social Web Working Group. This document also describes Social Web Working Group specifications in context of W3C recommendations and relevant drafts from other communities outside of the Social Web Working Group. As many of these specs are under ongoing development, this document is subject to change alongside them.</p>
+      <p>This is an overview of the current state of specifications of the Social Web Working Group. This document also describes Social Web Working Group specifications in context of W3C recommendations and relevant drafts from other communities outside of the Social Web Working Group as a desperate attempt to get you to see why we ended up like this. As many of these specs are under ongoing development, this document is subject to change alongside them, and alongside rhiaro's mental state.</p>
 
       <p>You might also want to take a look at the Working Group's <a href="https://www.w3.org/wiki/Socialwg/Social_API/Requirements">Social API Requirements</a> to understand the division of concerns.</p>
       
-      <p>Due to the diversity of viable technical approaches proposed within the Working Group, several specifications on the recommendation track provide overlapping functionality through differing mechanisms. Thus this document exists to provide informative guidance on how and when to implement the various specifications, as well as normative instructions to implement bridges between recommendations with overlapping functionality. This is currently a recommendation-track document, but may finally be published as a Note.</p>
+      <p>Due to the diversity of viable technical approaches proposed within the Working Group, the outputs may appear to outside observers as an abhorrent mess. The dury is out on the exciting and polarising debate over whether the ever-elusive 'real' developers literally only understand posting HTML forms and adding CSS classes to things; whether everything on the web is, always will be, and can only ever be plain JSON; or whether the solution to world hunger is just around the corner if only we made everyone use RDF for everything. This debate is reflected in the bizarrely overlapping set of specs we have on the recommendation track. In many cases they are just different enough that attempts to merge them bring out the stubbornest sides of one or more WG members... yet so close that interoperability between them is possible if you squint some form-encoded variables into JSON, or JSON into JSON-LD. Why the hell are we asking these precious and delicate 'real' developers to do that, you might ask? Now the browser wars are over we've got to give them <em>something</em> to do, eh?</p>
 
     </section>
     <section id="swwg-drafts">
@@ -299,13 +299,13 @@ table.th90 th, table.th90 td {
       <dl>
 
         <dt>ActivityPub [<a href="http://www.w3.org/TR/activitypub">SWWG WD</a>]</dt>
-        <dd>JSON-based APIs for <a href="#reading">reading</a>, <a href="#creating-content">creating</a>, <a href="#updating">updating</a>, <a href="#deleting">deleting</a>, <a href="#subscribing">subscribing</a>, <a href="#delivery">delivery</a> and <a href="#profiles">profiles</a>.</dd>
+        <dd>Camp plain-JSON; but potentially friendly to RDF. Does bit of everything, depends on AS2 for data syntax and vocabulary.</dd>
 
         <dt>ActivityStreams 2.0 (AS2) [<a href="http://www.w3.org/TR/activitystreams-core">SWWG WD Core</a>, <a href="http://www.w3.org/TR/activitystreams-vocabulary">SWWG WD Vocab</a>]</dt>
-        <dd>The syntax and vocabulary for <a href="#reading">representing</a> social activities, actors, objects, and collections in JSON and RDF.</dd>
+        <dd>Camp plain-JSON; syntax and vocabulary. Extended the hand of friendship to RDF with a JSON-LD <code>context</code>, but rebuffed because it has its own media type.</dd>
 
         <dt>JF2 [<a href="http://dissolve.github.io/jf2/">SWWG WD (Note)</a>]</dt>
-        <dd>A JSON serialization for <a href="#reading">representing</a> objects and feeds of social data.</dd>
+        <dd>Camp plain-JSON; syntax and not-really-vocabulary-but-actually-its-microformats2. Mentions JSON-LD because everyone is doing it, but doesn't really mean it. .</dd>
 
         <dt>Linked Data Notifications [<a href="https://linkedresearch.org/ldn/">SWWG ED</a>]</dt>
         <dd>An RDF-based protocol for <a href="#delivery">delivery</a>.</dd>
