@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" typeof="bibo:Document " prefix="bibo: http://purl.org/ontology/bibo/ w3p: http://www.w3.org/2001/02pd/rec54#">
 <head><meta lang="" property="dc:language" content="en">
-    <title>Social Web Protocols</title>
+    <title>Social Web Snark</title>
     <meta charset="utf-8">
     
     
@@ -167,7 +167,7 @@ table.th90 th, table.th90 td {
 <script src='https://www.w3.org/Tools/respec/respec-w3c-common' async class='remove'></script>
 <script class='remove'>
       var respecConfig = {
-          specStatus: "ED",
+          specStatus: "unofficial",
           shortName:  "social-web-snark",
           editors: [
                 {   name:       "Amy Guy",
@@ -260,16 +260,16 @@ table.th90 th, table.th90 td {
   <section id="overview">
     <h2>Overview</h2>
 
-    <p>People (unfortunately) and the content they create are the core components of the social web; they make up the social graph. This document describes multiple competing 'standard' ways in which people can:</p>
+    <p>People (unfortunately) and the content they create (yay cat gifs) are the core components of the social web; they make up the social graph. This document describes multiple competing 'standard' ways in which people can:</p>
     
     <ul>
-      <li>connect with other people and subscribe to their content;</li>
-      <li>create, update and delete social content;</li>
-      <li>interact with other peoples' content;</li>
-      <li>be notified when other people interact with their content;</li>
+      <li>awkwardly friend their co-workers and watch their every move;</li>
+      <li>post pictures of their breakfast and angry rants;</li>
+      <li>like pictures of other people's breakfast and react with ignorant misinterpretations of current events;</li>
+      <li>be notified when other people like their breakfast or hurl abuse;</li>
     </ul>
     
-    <p>regardless of <em>what that content</em> is or <em>where it is stored</em>.</p>
+    <p>regardless of <em>what that content</em> is (breakfast/abuse) or <em>where it is stored</em>.</p>
     
     <p>These components are core building blocks for interoperable social systems.</p>
     
@@ -290,7 +290,7 @@ table.th90 th, table.th90 td {
 
       <p>You might also want to take a look at the Working Group's <a href="https://www.w3.org/wiki/Socialwg/Social_API/Requirements">Social API Requirements</a> to understand the division of concerns.</p>
       
-      <p>Due to the diversity of viable technical approaches proposed within the Working Group, the outputs may appear to outside observers as an abhorrent mess. The dury is out on the exciting and polarising debate over whether the ever-elusive 'real' developers literally only understand posting HTML forms and adding CSS classes to things; whether everything on the web is, always will be, and can only ever be plain JSON; or whether the solution to world hunger is just around the corner if only we made everyone use RDF for everything. This debate is reflected in the bizarrely overlapping set of specs we have on the recommendation track. In many cases they are just different enough that attempts to merge them bring out the stubbornest sides of one or more WG members... yet so close that interoperability between them is possible if you squint some form-encoded variables into JSON, or JSON into JSON-LD. Why the hell are we asking these precious and delicate 'real' developers to do that, you might ask? Now the browser wars are over we've got to give them <em>something</em> to do, eh?</p>
+      <p>Due to the diversity of viable technical approaches proposed within the Working Group, the outputs may appear to outside observers as an abhorrent mess. The jury is out on the exciting and polarising debate over whether the ever-elusive 'real' developers literally only understand posting HTML forms and adding CSS classes to things; whether everything on the web is, always will be, and can only ever be plain JSON and everyone is happy agreeing on the same definitely unambiguous English language strings for keys; or whether the solution to world hunger is just around the corner if only we made everyone use RDF for everything. This debate is reflected in the bizarrely overlapping set of specs we have on the recommendation track. In many cases they are just different enough that attempts to merge them bring out the stubbornest sides of one or more WG members... yet so close that interoperability between them is possible if you squint some form-encoded variables into JSON, or JSON into JSON-LD. Why the hell are we asking these precious and delicate 'real' developers to do that, you might ask? Now the browser wars are over we've got to give them <em>something</em> to do, eh?</p>
 
     </section>
     <section id="swwg-drafts">
@@ -298,26 +298,29 @@ table.th90 th, table.th90 td {
 
       <dl>
 
-        <dt>ActivityPub [<a href="http://www.w3.org/TR/activitypub">SWWG WD</a>]</dt>
+        <dt>ActivityPub [<a href="http://www.w3.org/TR/activitypub">WD</a>]</dt>
         <dd>Camp plain-JSON; but potentially friendly to RDF. Does bit of everything, depends on AS2 for data syntax and vocabulary.</dd>
 
-        <dt>ActivityStreams 2.0 (AS2) [<a href="http://www.w3.org/TR/activitystreams-core">SWWG WD Core</a>, <a href="http://www.w3.org/TR/activitystreams-vocabulary">SWWG WD Vocab</a>]</dt>
+        <dt>ActivityStreams 2.0 (AS2) [<a href="http://www.w3.org/TR/activitystreams-core">WD Core</a>, <a href="http://www.w3.org/TR/activitystreams-vocabulary">WD Vocab</a>]</dt>
         <dd>Camp plain-JSON; syntax and vocabulary. Extended the hand of friendship to RDF with a JSON-LD <code>context</code>, but rebuffed because it has its own media type.</dd>
 
-        <dt>JF2 [<a href="http://dissolve.github.io/jf2/">SWWG WD (Note)</a>]</dt>
-        <dd>Camp plain-JSON; syntax and not-really-vocabulary-but-actually-its-microformats2. Mentions JSON-LD because everyone is doing it, but doesn't really mean it. .</dd>
+        <dt>JF2 [<a href="http://dissolve.github.io/jf2/">WD (Note)</a>]</dt>
+        <dd>Camp plain-JSON; syntax and not-really-vocabulary-but-actually-its-microformats2. Mentions JSON-LD because everyone is doing it, but doesn't really mean it. Different to AS2 only in that it puts object-type semantics in properties instead of giving things explicit types. Tomato tomato.</dd>
 
-        <dt>Linked Data Notifications [<a href="https://linkedresearch.org/ldn/">SWWG ED</a>]</dt>
-        <dd>An RDF-based protocol for <a href="#delivery">delivery</a>.</dd>
+        <dt>Linked Data Notifications [<a href="https://linkedresearch.org/ldn/">ED</a>]</dt>
+        <dd>You have to parse RDF to find the endpoint, but once you're there you can post whatever you like. As long as its RDF. JK, you can do discovery through Link headers too but watch out in case you dilute the RDF purity. JSON-LD is fine, but you have to promise to switch to Turtle eventually. Even though AS2 is basically RDF its media type is icky so none of that please.</dd>
 
-        <dt>Micropub [<a href="http://www.w3.org/TR/micropub">SWWG WD</a>]</dt>
-        <dd>A form-encoding-based API for <a href="#creating-content">creating</a>, <a href="#updating">updating</a> and <a href="#deleting">deleting</a>.</dd>
+        <dt>Micropub [<a href="http://www.w3.org/TR/micropub">WD</a>]</dt>
+        <dd>If everyone <em>just</em> agrees to use the microformats2 vocabulary, structured according to the original mf2 parsing spec (no not JF2) then anyone's form can POST to anyone else's endpoint.</dd>
 
         <dt>Post Type Discovery [<a href="https://tantek.github.io/post-type-discovery/">ED</a>]</dt>
-        <dd>A protocol to bridge implicitly typed posts and explicitly typed posts.</dd>
+        <dd>A handy list of arbitrary rules to convert unstable mf2 terms structured as JF2 JSON into non-existent AS2 typed activities.</dd>
 
-        <dt>Webmention [<a href="http://www.w3.org/TR/webmention">SWWG CR</a>]</dt>
-        <dd>A form-encoding-based protocol for <a href="#delivery">delivery</a>.</dd>
+        <dt>Social Web Protocols [<a href="http://w3.org/TR/social-web-protocols">WD</a>]</dt>
+        <dd>A desperate attempt to prove we know what we're doing. Loves and hates all of the specs equally. But some more than others.</dd>
+
+        <dt>Webmention [<a href="http://www.w3.org/TR/webmention">CR</a>]</dt>
+        <dd>Form-encoded pingback. Assumes you're publishing links to things at public URLs. 'Simple' but you probably need an HTML parser to get anything done. Where do webmentions go when they're sent? None of this spec's business. Can be used to unwittingly launch drones.</dd>
       </dl>
       
     </section>
