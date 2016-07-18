@@ -807,10 +807,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <dd>Camp plain-JSON; syntax and not-really-vocabulary-but-actually-its-microformats2. Mentions JSON-LD because everyone is doing it, but doesn't really mean it. Different to AS2 only in that it puts object-type semantics in properties instead of giving things explicit types. Tomato tomato.</dd>
 
         <dt>Linked Data Notifications [<a href="https://linkedresearch.org/ldn/">ED</a>]</dt>
-        <dd>You have to parse RDF to find the endpoint, but once you're there you can post whatever you like. As long as its RDF. JK, you can do discovery through Link headers too but watch out in case you dilute the RDF purity. JSON-LD is fine, but you have to promise to switch to Turtle eventually. Even though AS2 is basically RDF its media type is icky so none of that please.</dd>
+        <dd>You have to parse RDF to find the endpoint, but once you're there you can post whatever you like. As long as its RDF. JK, you can do discovery through Link headers too but watch out in case you dilute the RDF purity. JSON-LD is fine, but only as a gateway drug to Turtle. Even though AS2 is basically RDF its media type is icky so none of that please.</dd>
 
         <dt>Micropub [<a href="http://www.w3.org/TR/micropub">WD</a>]</dt>
-        <dd>If everyone <em>just</em> agrees to use the microformats2 vocabulary, structured according to the original mf2 parsing spec (no not JF2) then anyone's form can POST to anyone else's endpoint.</dd>
+        <dd>If everyone <em>just</em> agrees to use the microformats2 vocabulary, or your own arbitrary keys as long as they're structured according to the original mf2 parsing spec (no silly not JF2) then anyone's form can POST to anyone else's endpoint. Interoperability success!</dd>
 
         <dt>Post Type Discovery [<a href="https://tantek.github.io/post-type-discovery/">ED</a>]</dt>
         <dd>A handy list of arbitrary rules to convert unstable mf2 terms structured as JF2 JSON into non-existent AS2 typed activities.</dd>
@@ -830,16 +830,16 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       <dl>
 
         <dt>ActivityStreams 1.0 [<a href="http://activitystrea.ms/specs/json/1.0/">External</a>]</dt>
-        <dd>The predecessor to [<cite><a href="#bib-ActivityStreams2" class="bibref">ActivityStreams2</a></cite>].</dd>
+        <dd>The predecessor to [<cite><a href="#bib-ActivityStreams2" class="bibref">ActivityStreams2</a></cite>]. Abundance of implementers are hiding around here somewhere under one of these rocks.</dd>
 
-        <dt>Annotation Protocol [<a href="https://www.w3.org/TR/annotation-protocol/">WAWG WD</a>]</dt>
-        <dd>Transport mechanisms for creating and managing annotations on the Web.</dd>
+        <dt>Annotation Protocol [<a href="https://www.w3.org/TR/annotation-protocol/">WAWG CR</a>]</dt>
+        <dd>Do LDP <em>this way</em>.</dd>
 
         <dt>Linked Data Platform [<a href="https://www.w3.org/TR/ldp/">LDP REC</a>]</dt>
-        <dd>A protocol for reading and writing Linked Data.</dd>
+        <dd>HTTP verbs and RDF, what more could you need?</dd>
 
         <dt>Solid [<a href="http://github.com/solid/solid-spec">ED</a>] (External with SWWG representation)</dt>
-        <dd>Extensions to LDP for use in social applications</dd>
+        <dd>Dear LDP, to answer your previous question: authentication, user profiles, access control, a type registry, SPARQL, ...</dd>
 
       </dl>
 
